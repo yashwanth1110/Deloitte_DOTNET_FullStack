@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3 >JavaScript Programming</h3>
+    <hr/>
+    First Number :  
+    <input type="text" id="t1"  />
+    <br></br>
+    Second Number :  
+    <input type="text" id="t2"  />
+    <br></br>
+    <input type="button" onclick="func(event)" id="add"
+        value="+"  />
+    <input type="button" onclick="func(event)" id="sub"
+        value="-"  />	 
+    <input type="button" onclick="func(event)" id="mul"
+        value="*"  />
+    <input type="button" onclick="func(event)" id="div"
+        value="/"  />	
+     </br>
+    <p id="p1"></p>
+
+    <script>
+        function  func(event)
+        {
+         
+            let num1 =parseInt(document.getElementById("t1").value);
+            let num2 =parseInt(document.getElementById("t2").value);
+            let add1=num1+num2;
+            let sub1=num1-num2;
+            let mul1=num1*num2;
+            let div1=num1/num2;
+            let answer=event.target.id;
+    
+            if(answer=="add"){
+                    document.getElementById("p1").innerHTML="Sum:" +add1;
+                
+                 }
+                 else if(answer=="sub"){
+                    
+                    document.getElementById("p1").innerHTML="Subraction:" +sub1;
+                 }
+                 else if(answer=="mul"){
+                    document.getElementById("p1").innerHTML="Multiplication:" +mul1;
+                 }
+                 else if(answer=="div"){
+                    document.getElementById("p1").innerHTML="Division:" +div1;
+                 }
+     }
+    </script>
+
+</body>
+
+</html>
+
