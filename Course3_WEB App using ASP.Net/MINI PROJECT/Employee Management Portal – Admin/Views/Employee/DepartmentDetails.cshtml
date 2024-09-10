@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Employee_Management_Portal___Admin.Models.Employee>
+
+@{
+    ViewData["Title"] = "Department List";
+}
+
+<h1>Employee List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Departments</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model.Select(e => e.Department).Distinct())
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Employee" asp-action="DetailInfo" asp-route-department="@department">
+                        @department
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
